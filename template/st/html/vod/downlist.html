@@ -1,0 +1,20 @@
+		{maccms:foreach name="obj.vod_down_list" id="vo"}		
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_hd">
+			<div class="myui-panel__head bottom-line active clearfix">	
+				<a class="more sort-button pull-right" href="javascript:;"><i class="fa fa-sort-amount-asc"></i> 排序</a>				<h3 class="title">
+					{$vo.from}下载地址				</h3>	
+			</div>																		
+		</div>
+				<div class="myui-panel_bd clearfix">
+						<ul class="myui-content__list sort-list clearfix" style="max-height: 300px; overflow: auto;">
+								{maccms:foreach name="vo.urls" id="vo2"}
+                <li class="col-lg-10 col-md-8 col-sm-6 col-xs-4"><a class="btn btn-default" href="{$vo2.url}">{$vo2.name}</a></li>
+                		{/maccms:foreach}		
+            
+                			</ul>
+		</div>
+			</div>
+</div>
+{/maccms:foreach}

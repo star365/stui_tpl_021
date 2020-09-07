@@ -1,0 +1,39 @@
+						<div class="myui-panel myui-panel-bg clearfix">
+			<div class="myui-panel-box clearfix">
+				<div class="myui-panel_hd">
+					<div class="myui-panel__head active bottom-line clearfix">
+						<a class="more sort-button pull-right" href="javascript:;"><i class="fa fa-sort-amount-asc"></i> 排序</a>						<h3 class="title">
+							播放地址						</h3>
+						<ul class="nav nav-tabs">		
+							<li class="dropdown pb10">
+								<a href="javascript:;" data-toggle="dropdown">切换线路 <i class="fa fa-angle-down"></i></a>
+<span class="split-line"></span>
+{$vo.player_info.tip}
+								<div class="dropdown-box bottom fadeInDown">
+									<ul class="item">
+
+
+	{maccms:foreach name="obj.vod_play_list" id="vo" by="sort"}	
+					<li><a href="#playlist{$key}" data-toggle="tab">{$vo.player_info.show}</a></li>
+			{/maccms:foreach}
+											</ul>
+								</div>
+							</li>
+						</ul>
+					</div>																		
+				</div>
+				<div class="tab-content myui-panel_bd">
+						{maccms:foreach name="obj.vod_play_list" id="vo" by="sort"}	
+					<div id="playlist{$key}" class="tab-pane fade in clearfix">
+												<ul class="myui-content__list sort-list clearfix" style="max-height: 300px; overflow: auto;">
+{maccms:foreach name="vo.urls" id="vo2"}
+	<li class="col-lg-10 col-md-8 col-sm-6 col-xs-4"><a class="btn btn-default" href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}">{$vo2.name}</a></li>
+    {/maccms:foreach}	
+    </ul>
+					</div>															
+						
+			{/maccms:foreach}															
+									</div>
+			</div>
+		</div>	
+		

@@ -1,0 +1,31 @@
+
+首页幻灯，分为两个，一个是第一张，推荐9，剩下的均为推荐8
+首页横向今日热门，推荐2，图片为缩略图
+首页大片推荐，推荐1
+
+弹窗在，block/foot.html
+如不需要弹窗，在最后则删除弹窗部分，保留如下部分
+
+<script type="text/javascript">
+	MyTheme.Images.Qrcode.Init();MyTheme.Link.Short();MyTheme.Other.Skin();MyTheme.Other.Share();</script>
+
+
+压缩包两个文件夹，一个st,一个template
+均上传至根目录，后台系统，网站参数设置，模板选择st，开启自适应手机多域完成模板选择
+
+
+如果你的屏幕是2560X1440的，或者是超宽的，设置好幻灯后（一般幻灯2100，2200左右款）觉得左右两侧白屏很烦，可以在视频添加后，根据图片左右两侧，摘选颜色，后台视频添加处选择高亮，填写相应的颜色既可）
+
+
+需要列表页为横向图片显示的，需在基础-分类管理处绑定zytype.html分类页模板
+
+演示站点显示的AD广告，见./template/st/html/index/ad1-8.html
+
+演员采集：资源名称随意填写
+接口地址填写： https://www.6vhao.vip/api.php/provide/actor/xml 
+接口类型：json >>> 资源类型：演员 >>> 保存即可！
+
+
+
+
+

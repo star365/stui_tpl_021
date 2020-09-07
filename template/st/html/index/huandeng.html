@@ -1,0 +1,49 @@
+<div id="home_slide" class="carousel slide clearfix" data-ride="carousel">
+	<div class="carousel-inner">
+{maccms:vod num="1" type="all" order="desc" by="time" level="9"}
+    			<div class="item text-center active" style="background-color: #{$vo.vod_color};">
+			<a title="{$vo.vod_name}" href="{:mac_url_vod_detail($vo)}">
+				<img class="img-responsive" src="{:mac_url_img($vo.vod_pic_slide)}"/>			</a>
+		</div>
+{/maccms:vod}
+
+{maccms:vod num="5" type="all" order="desc" by="time" level="8"}
+
+    			<div class="item text-center" style="background-color: #{$vo.vod_color};">
+			<a title="{$vo.vod_name}" href="{:mac_url_vod_detail($vo)}">
+				<img class="img-responsive" src="{:mac_url_img($vo.vod_pic_slide)}"/>			</a>
+		</div>
+{/maccms:vod}
+
+
+
+
+    	    </div> 
+    	<ul class="carousel-indicators carousel-indicators-text hidden-md hidden-sm hidden-xs">
+
+{maccms:vod num="1" type="all" order="desc" by="time" level="9"}
+    	    	<li data-target="#home_slide" data-slide-to="0" class="active">
+    		<h4 class="title">{$vo.vod_name}</h4>
+    		<p class="text margin-0">
+    				{$vo.vod_year}/{$vo.vod_area}/{$vo.vod_class}</p>
+    	</li>
+{/maccms:vod}
+
+
+
+{maccms:vod num="5" type="all" order="desc" by="time" level="8"}
+    	        <li data-target="#home_slide" data-slide-to="{$key}" class="">
+    		<h4 class="title">{$vo.vod_name}</h4>
+    		<p class="text margin-0">
+    				{$vo.vod_year}/{$vo.vod_area}/{$vo.vod_class}</p>
+    	</li>
+{/maccms:vod}
+
+
+
+
+    	    </ul>
+        <a class="carousel-control left" href="#home_slide" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+	<a class="carousel-control right" href="#home_slide" data-slide="next"><i class="fa fa-angle-right"></i></a>
+		
+</div>

@@ -1,0 +1,14 @@
+{if condition="$__PAGING__.page_total gt 1"}
+			<ul class="myui-page text-center clearfix">
+	<li><a class="btn btn-default" href="{$__PAGING__.page_url|mac_url_page=1}">首页</a></li>
+	        <li><a class="btn btn-default" href="{$__PAGING__.page_url|mac_url_page=$__PAGING__.page_prev}">上一页</a></li>	
+	{maccms:foreach name="$__PAGING__.page_num" id="num"}
+	<li ><a class="{if condition="$__PAGING__['page_current'] eq $num"}btn  btn-warm{/if} btn  btn-default" href="{$__PAGING__.page_url|mac_url_page=$num}">{$num}</a></li>
+	{/maccms:foreach}
+		<li  ><a class="btn btn-warm">{$__PAGING__.page_current}/{$__PAGING__.page_total}</a></li>
+	<li><a class="btn btn-default" href="{$__PAGING__.page_url|mac_url_page=$__PAGING__.page_next}">下一页</a></li>
+	<li><a class="btn btn-default" href="{$__PAGING__.page_url|mac_url_page=$__PAGING__.page_total}">尾页</a></li>	
+      <li>  <input class="btn-default page_input" type="text" placeholder="页码"  id="page" autocomplete="off" style="width:100%;height:35px"></li>	
+         <li>    <button class="btn btn-default  mac_page_go" type="button" data-url="{$__PAGING__.page_url}" data-total="{$__PAGING__.page_total}" data-sp="{$__PAGING__.page_sp}" >GO</button>		</li>				
+</ul>
+{/if}

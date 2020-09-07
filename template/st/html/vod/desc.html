@@ -1,0 +1,20 @@
+					<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_hd">
+			<div class="myui-panel__head clearfix">
+				<h3 class="title">
+					剧情简介
+				</h3>						
+			</div>																		
+		</div>
+		<div class="myui-panel_bd">
+			<div class="col-pd text-collapse content">
+				<p><span class="text-muted">导演：</span>{$obj.vod_director|mac_url_create='director'} </p>
+				<p><span class="text-muted">主演：</span>{$obj.vod_actor|mac_url_create='actor'} </p>
+				<span class="sketch content">{$obj.vod_content|mac_filter_html|mac_substring=100}</span>
+				<span class="data" style="display: none;">{$obj.vod_content|mac_filter_html} </span>
+				<a class="details" href="javascript:;">详情 <i class="fa fa-angle-down"></i></a>
+			</div>			
+		</div>			
+	</div>						
+</div>

@@ -1,0 +1,36 @@
+		<div class="myui-panel__head active clearfix">
+			<h3 class="title text-fff">
+				哦！我的皇帝陛下第一季			</h3>	
+		</div>
+			
+
+		<div class="text-muted">
+			<ul class="nav nav-tabs pull-right">										
+				<li class="dropdown pb10 margin-0">
+					<a href="javascript:;" class="padding-0 text-fff" data-toggle="dropdown">换线路 <i class="fa fa-angle-down"></i></a>
+					<div class="dropdown-box bottom">
+						<ul class="item">
+	{maccms:foreach name="obj.vod_play_list" id="vo" by="sort"}	
+														<li><a href="#playlist{$key}" tabindex="-1" data-toggle="tab">{$vo.player_info.show}</a></li>
+
+			{/maccms:foreach}
+													</ul>
+					</div>
+				</li>
+			</ul>
+			<span class="text-red">2.0分</span> / <a class="text-muted" href="/index.php/vod/show/id/13.html">国产剧</a> / <a class="text-muted" href="/index.php/vod/show/area/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/id/13.html">中国大陆</a> / <a class="text-muted" href="/index.php/vod/show/id/13/year/2018.html">2018	</a>
+		</div>
+
+		{maccms:foreach name="obj.vod_play_list" id="vo" by="sort"}
+
+<div class="tab-content mb10">
+				<div id="playlist{$key}" class="active tab-pane fade in clearfix">
+				<ul class="myui-content__list playlist clearfix" id="playlist">
+				{maccms:foreach name="vo.urls" id="vo2"}
+				<li class="col-lg-3 col-md-6 col-sm-5 col-xs-4"><a class="btn btn-min btn-gray" href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}">{$vo2.name}</a> </li>
+				    {/maccms:foreach}
+                </ul>
+			</div>
+
+			</div>
+	{/maccms:foreach}	
